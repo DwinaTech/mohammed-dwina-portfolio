@@ -1,6 +1,24 @@
 const data = [
   {
     id: 1,
+    company: "SAS Instatute",
+    role: "Senior Software Developer",
+    date: " April 2024 - ongoing",
+    info: `
+    I work as a Senior Frontend Software Engineer, collaborating with cross-functional teams to deliver high-performance, reliable, and scalable data analysis interface systems.
+    `,
+  },
+  {
+    id: 1,
+    company: "SAS Instatute",
+    role: "Frontend Software Developer",
+    date: " Sep 2022 - April 2024",
+    info: `
+    I work as a Frontend Software Engineer, collaborating with diverse teams to deliver high-performance, reliable, and scalable data analysis interface systems.
+    `,
+  },
+  {
+    id: 1,
     company: "Arnold Clark",
     role: "Frontend Developer",
     date: " June 2021 - ongoing",
@@ -39,31 +57,6 @@ const data = [
     The technologies I am using are React.js, Redux,  JavaScript (ES6 syntax), Sass, CSS3, HTML5, Webpack.
     The tools I am using are Eslint, babel,  prettier and Chrome Dev.
     The version control system I am using is Git and Github.
-    `,
-  },
-  {
-    id: 4,
-    company: "Directory Of Services",
-    role: "Junior Full Stack Developer (remote)",
-    date: " Jan 2018 - Aug 2018",
-    info: `
-    I am working with three junior developers and two lead developers on behalf of
-            a consortium of London-based NGOs to build a web application which will
-            deliver information about all the services provided for refugees and migrants in
-            London. I am responsible for client- and server-side development, including
-            work with the REST API, authentication, validation, library integration, and UI.
-            The application is built using Node, React, Redux, Material-UI and SQLite
-            (PostgreSQL in production), following an agile process with daily standups,
-    retrospectives and code reviews.Communication occurs over Trello and Slack.
-    `,
-  },
-  {
-    id: 5,
-    company: "J.P. Morgan",
-    role: "Code for Good Hackathon",
-    date: "Nov 2017, Glasgow",
-    info: `
-    I was a member of 5 persons team representing CodeYourFuture. Our challenge was to create a screen reader web application for Henshaws - a charity supporting people living with sight loss and a range of other disabilities. My main role, in the team, involved working on the server-side on communicating with Microsoft Computer Vision API , sending the images and processing the response. The challenge involved reading and understanding the API documentation and building an MVP in less than 24 hours Our team won an award for the most productive team in the competition.
     `,
   },
   {
