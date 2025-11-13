@@ -1,5 +1,8 @@
 import type { Route } from "./+types/home";
 import data from "../assets/data/experienceData";
+import InfoCard from "~/components/InfoCard";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -13,19 +16,25 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Experience() {
   return (
-    <div className="max-w-4xl mx-auto py-16 px-4">
-      <h2 className="text-3xl font-bold mb-4">Experience</h2>
-      <div className="space-y-6">
-        {data.map((job) => (
-          <div className="p-4 border rounded">
-            <h3 className="font-semibold">
-              {job.role} — {job.company}
-            </h3>
-            <p className="text-gray-600 text-sm">{job.date}</p>
-            <p className="text-gray-700 mt-2">{job.info}</p>
+    <div
+      className="flex flex-col min-h-screen font-sans text-gray-900 bg-[#f9f9f9]"
+      style={{ fontFamily: "Poppins, sans-serif" }}
+    >
+      <Navbar />
+      <main className="flex flex-col flex-grow px-6 py-12">
+        <section className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
+          <h1 className="text-4xl font-bold text-center mb-10 text-gray-900">
+            Experience
+          </h1>
+
+          <div className="space-y-8">
+            {data.map((exp, index) => (
+              <InfoCard key={index} {...exp} />
+            ))}
           </div>
-        ))}
-      </div>
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 }

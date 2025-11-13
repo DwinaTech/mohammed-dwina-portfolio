@@ -1,26 +1,27 @@
 const data = [
   {
     id: 1,
-    company: "SAS Instatute",
-    role: "Senior Frontend Software Engineer",
-    date: "Sep 2023 — Present | Glasgow, UK",
-    info: "Building high-performance data analysis interfaces, collaborating with cross-functional teams.",
+    subtitle: "SAS Instatute",
+    title: "Senior Frontend Software Engineer",
+    period: "Sep 2023 — Present | Glasgow, UK",
+    description:
+      "Building high-performance data analysis interfaces, collaborating with cross-functional teams.",
   },
   {
     id: 2,
-    company: "SAS Instatute",
-    role: "Frontend Software Engineer",
-    date: "Sep 2022 - April 2024 | Glasgow, UK",
-    info: `
+    subtitle: "SAS Instatute",
+    title: "Frontend Software Engineer",
+    period: "Sep 2022 - April 2024 | Glasgow, UK",
+    description: `
     I work as a Frontend Software Engineer, collaborating with diverse teams to deliver high-performance, reliable, and scalable data analysis interface systems.
     `,
   },
   {
     id: 3,
-    company: "Arnold Clark",
-    role: "Frontend Developer",
-    date: " June 2021 - ongoing",
-    info: `
+    subtitle: "Arnold Clark",
+    title: "Frontend Developer",
+    period: " June 2021 - ongoing",
+    description: `
     I am working as a Frontend Developer in Arnold Clark digital team. 
     My main responsibility to help improving/solving Arnold Clark customer buying/renting a car process through the digital system, help shaping tickets, help in the sprint planning, review code, build frontend pipeline, 
     writing unit tests, continuous refactoring, working with other developers in the team. 
@@ -32,10 +33,10 @@ const data = [
   },
   {
     id: 4,
-    company: "BBC D&E",
-    role: "Software Engineer",
-    date: " Fab 2020 - June 2021",
-    info: `
+    subtitle: "BBC D&E",
+    title: "Software Engineer",
+    period: " Fab 2020 - June 2021",
+    description: `
     I am working as software engineer in the BBC Home team. 
     My main responsibility to deliver new features, handling ATI tracking functionalities, writing unit tests, continuous refactoring, working with other developers in the team and fixing any bug reported by Opps team. 
     The App we are building is the main BBC Homepage website and other nations pages, it is a data driven web application,I am working in both site front-end and backend.
@@ -46,10 +47,10 @@ const data = [
   },
   {
     id: 5,
-    company: "STV Group",
-    role: "Front-End Web Developer",
-    date: " Aug 2018 - ongoing",
-    info: `
+    subtitle: "STV Group",
+    title: "Front-End Web Developer",
+    period: " Aug 2018 - ongoing",
+    description: `
     I am working in STV Player for TV platforms, my main responsibility to deliver new features, add Adobe tracking DTM functionalities, writing unit tests, continuous refactoring, helping other developers in the team and fixing any bug reported by Opps team, the App we are building is a HbbTV App which should be compatible with different TV platforms, the platforms I am working at are FireTV, Virgin Media, Samsung, Freeview and Freesat.
     TV set-top boxes are different modals most of them are old, so I am responsible to make sure to do proper optimization for improving memory usage and performance.  
     The technologies I am using are React.js, Redux,  JavaScript (ES6 syntax), Sass, CSS3, HTML5, Webpack.
@@ -59,10 +60,10 @@ const data = [
   },
   {
     id: 6,
-    company: "CodeYourFuture",
-    role: "Trainee Full Stack Developer",
-    date: "May 2017 - Dec 2017, Glasgow",
-    info: `
+    subtitle: "CodeYourFuture",
+    title: "Trainee Full Stack Developer",
+    period: "May 2017 - Dec 2017, Glasgow",
+    description: `
     I finished an intensive six-month course to become a Full Stack JavaScript
             Developer at CodeYourFuture, is an organisation that teaches asylum seekers
             and refugees. I was mentored by highly skilled and qualified volunteer
