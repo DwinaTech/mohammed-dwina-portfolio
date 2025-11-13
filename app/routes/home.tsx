@@ -1,57 +1,74 @@
-import type { Route } from "./+types/home";
-import { User, Info, Briefcase, Folder, Mail } from "lucide-react";
 import { Link } from "react-router";
+import { Info, Mail, Briefcase, GraduationCap } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Mohammed Dwina | Home" },
     {
       name: "description",
       content:
-        "Welcome to Mohammed Dwina's personal portfolio. Senior Frontend Software Engineer at SAS.",
+        "Welcome to Mohammed Dwina's portfolio — Senior Frontend Software Engineer.",
     },
   ];
 }
 
 export default function Home() {
-  const accentColor = "#10b981";
-
   const navItems = [
-    { label: "About", icon: <Info size={32} />, path: "/about" },
-    { label: "Experience", icon: <Briefcase size={32} />, path: "/experience" },
-    // { label: "Projects", icon: <Folder size={32} />, path: "/projects" },
-    { label: "Contact", icon: <Mail size={32} />, path: "/contact" },
-    { label: "Profile", icon: <User size={32} />, path: "/about" },
+    {
+      label: "About",
+      path: "/about",
+      icon: <Info size={26} />,
+    },
+    {
+      label: "Contact",
+      path: "/contact",
+      icon: <Mail size={26} />,
+    },
+    {
+      label: "Education",
+      path: "/education",
+      icon: <GraduationCap size={26} />,
+    },
+    {
+      label: "Experience",
+      path: "/experience",
+      icon: <Briefcase size={26} />,
+    },
   ];
 
   return (
-    <main
-      className="flex flex-col items-center justify-center min-h-screen text-center px-4 font-sans"
+    <div
+      className="flex flex-col min-h-screen font-sans text-gray-900 bg-[#f9f9f9]"
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
-      <img
-        src="https://avatars.githubusercontent.com/u/26422326?v=4"
-        alt="Mohammed Dwina"
-        className="rounded-full w-40 h-40 mb-6"
-      />
-      <h1 className="text-4xl font-bold mb-2">Mohammed Dwina</h1>
-      <p className="text-xl text-gray-700 mb-8">
-        Senior Frontend Software Engineer
-      </p>
+      <Navbar />
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {navItems.map((item, idx) => (
-          <Link
-            key={idx}
-            to={item.path}
-            className="flex flex-col items-center justify-center w-32 h-32 rounded-full shadow-lg transition-transform transform hover:scale-105"
-            style={{ backgroundColor: accentColor, color: "white" }}
-          >
-            {item.icon}
-            <span className="mt-2 font-semibold text-center">{item.label}</span>
-          </Link>
-        ))}
-      </div>
-    </main>
+      <main className="flex flex-col items-center justify-center flex-grow px-6 py-12 text-center">
+        <img
+          src="https://avatars.githubusercontent.com/u/26422326?v=4"
+          alt="Mohammed Dwina"
+          className="rounded-full w-52 h-52 object-cover mb-8 shadow-md"
+        />
+        <h2 className="text-5xl font-extrabold mb-6">Hello</h2>
+
+        <div className="flex flex-wrap justify-center gap-6 mt-2">
+          {navItems.map((item, idx) => (
+            <Link
+              key={idx}
+              to={item.path}
+              className="flex flex-col items-center justify-center w-28 h-28 rounded-full shadow-md transition-transform hover:scale-105 text-white"
+              style={{ backgroundColor: "#06b6d4" }}
+            >
+              {item.icon}
+              <span className="mt-1 text-sm font-semibold">{item.label}</span>
+            </Link>
+          ))}
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
