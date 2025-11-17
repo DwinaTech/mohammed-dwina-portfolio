@@ -1,7 +1,9 @@
-import { Link } from "react-router";
-import { Info, Mail, Briefcase, GraduationCap } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router";
+import { Download, User, Briefcase, Layers, Phone } from "lucide-react";
+
+import cv from "../assets/data/MohammedCV.pdf";
 
 export function meta() {
   return [
@@ -14,28 +16,14 @@ export function meta() {
   ];
 }
 
-export default function Home() {
-  const navItems = [
-    {
-      label: "About",
-      path: "/about",
-      icon: <Info size={26} />,
-    },
-    {
-      label: "Contact",
-      path: "/contact",
-      icon: <Mail size={26} />,
-    },
-    {
-      label: "Education",
-      path: "/education",
-      icon: <GraduationCap size={26} />,
-    },
-    {
-      label: "Experience",
-      path: "/experience",
-      icon: <Briefcase size={26} />,
-    },
+export default function About() {
+  const accent = "#06b6d4";
+
+  const buttons = [
+    { to: "/about", icon: User, label: "About" },
+    { to: "/experience", icon: Briefcase, label: "Experience" },
+    { to: "/education", icon: Layers, label: "Education" },
+    { to: "/contact", icon: Phone, label: "Contact" },
   ];
 
   return (
@@ -44,30 +32,48 @@ export default function Home() {
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
       <Navbar />
+      <main className="flex flex-col flex-grow py-3">
+        <div className="flex flex-col items-center text-center px-6 py-12 space-y-10">
+          <img
+            src="https://avatars.githubusercontent.com/u/26422326?v=4"
+            alt="Mohammed Dwina"
+            className="w-50 h-50 rounded-full shadow-lg object-cover"
+          />
 
-      <main className="flex flex-col items-center justify-center flex-grow px-6 py-12 text-center">
-        <img
-          src="https://avatars.githubusercontent.com/u/26422326?v=4"
-          alt="Mohammed Dwina"
-          className="rounded-full w-52 h-52 object-cover mb-8 shadow-md"
-        />
-        <h2 className="text-5xl font-extrabold mb-6">Hello</h2>
+          <h1 className="text-4xl font-bold">Mohammed Dwina</h1>
 
-        <div className="flex flex-wrap justify-center gap-6 mt-2">
-          {navItems.map((item, idx) => (
-            <Link
-              key={idx}
-              to={item.path}
-              className="flex flex-col items-center justify-center w-28 h-28 rounded-full shadow-md transition-transform hover:scale-105 text-white"
-              style={{ backgroundColor: "#06b6d4" }}
-            >
-              {item.icon}
-              <span className="mt-1 text-sm font-semibold">{item.label}</span>
-            </Link>
-          ))}
+          <p className="text-lg text-gray-600 max-w-xl">
+            Senior Frontend Engineer focused on scalable and maintainable
+            systems.
+          </p>
+
+          {/* Download CV */}
+          <a
+            href={cv}
+            download
+            className="mt-4 inline-flex items-center gap-2 bg-[--accent] text-white px-6 py-3 rounded-full shadow-md hover:opacity-90 transition"
+            style={{ backgroundColor: accent }}
+          >
+            <Download size={20} />
+            Download CV
+          </a>
+
+          {/* Navigation Icons */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-6">
+            {buttons.map(({ to, icon: Icon, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className="flex flex-col items-center justify-center w-32 h-32 rounded-full border-4 shadow-md hover:shadow-lg transition text-gray-700"
+                style={{ borderColor: accent }}
+              >
+                <Icon size={36} color={accent} />
+                <span className="mt-2 text-md font-medium">{label}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
