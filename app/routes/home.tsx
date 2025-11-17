@@ -64,7 +64,7 @@ export default function About() {
               <Link
                 key={to}
                 to={to}
-                className="flex flex-col items-center justify-center w-32 h-32 rounded-full border-4 shadow-md hover:shadow-lg transition text-gray-700"
+                className="nav_link flex flex-col items-center justify-center w-32 h-32 rounded-full border-4 shadow-md hover:shadow-lg transition text-gray-700"
                 style={{ borderColor: accent }}
               >
                 <Icon size={36} color={accent} />

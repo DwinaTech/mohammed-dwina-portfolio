@@ -14,3 +14,12 @@ body {
     color-scheme: dark;
   }
 } */
+
+.nav_link:hover {
+  background-color: #06b6d4;
+  color: #000000;
+}
+
+.nav_link:hover svg {
+  stroke: #000000 !important;
+}
