@@ -1,8 +1,8 @@
 import type { Route } from "./+types/home";
 import data from "../assets/data/experienceData";
-import InfoCard from "~/components/InfoCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Timeline from "../components/Timeline";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -23,15 +23,9 @@ export default function Experience() {
       <Navbar />
       <main className="flex flex-col flex-grow px-6 py-12">
         <section className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-          <h1 className="text-4xl font-bold text-center mb-10 text-gray-900">
-            Experience
-          </h1>
+          <h1 className="text-4xl font-bold mb-10 text-gray-900">Experience</h1>
 
-          <div className="space-y-8">
-            {data.map((exp, index) => (
-              <InfoCard key={index} {...exp} />
-            ))}
-          </div>
+          <Timeline items={data} />
         </section>
       </main>
       <Footer />

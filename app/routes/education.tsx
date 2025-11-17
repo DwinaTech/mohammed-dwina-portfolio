@@ -2,6 +2,7 @@ import InfoCard from "../components/InfoCard";
 import data from "../assets/data/educationData";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Timeline from "../components/Timeline";
 
 const Education = () => {
   return (
@@ -12,15 +13,9 @@ const Education = () => {
       <Navbar />
       <main className="flex flex-col flex-grow px-6 py-12">
         <section className="max-w-4xl mx-auto px-4 py-12 text-gray-800">
-          <h1 className="text-4xl font-bold text-center mb-10 text-gray-900">
-            Education
-          </h1>
+          <h1 className="text-4xl font-bold mb-10 text-gray-900">Education</h1>
 
-          <div className="space-y-8">
-            {data.map((edu) => (
-              <InfoCard key={edu.id} {...edu} />
-            ))}
-          </div>
+          <Timeline items={data} />
         </section>
       </main>
       <Footer />
