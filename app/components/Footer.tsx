@@ -2,7 +2,7 @@ import { Linkedin, Github, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#18181b] text-white py-6 mt-12">
+    <footer className="bg-[#18181b] text-white py-6 mt-0">
       <div className="flex justify-center gap-6 mb-3">
         <a
           href="https://www.facebook.com/DwinaTech/"
