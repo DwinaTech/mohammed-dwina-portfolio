@@ -1,51 +1,75 @@
-import { Link, useLocation } from "react-router";
+import { useState } from "react";
+import { Link, NavLink } from "react-router";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const location = useLocation();
-  const active = "text-[#10b981] font-semibold";
+  const [open, setOpen] = useState(false);
+  const accent = "#06b6d4";
+
+  const links = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/experience", label: "Experience" },
+    { to: "/education", label: "Education" },
+    { to: "/contact", label: "Contact" },
+  ];
 
   return (
-    <header className="flex justify-between items-center px-8 py-4 border-b border-gray-200 bg-white/70 backdrop-blur-sm sticky top-0 z-50">
-      <Link to="/">
-        <h1 className="text-lg font-semibold tracking-tight">Mohammed Dwina</h1>
-      </Link>
+    <nav className="w-full border-b bg-white sticky top-0 z-50">
+      <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+        {/* Logo / Title */}
+        <Link to="/" className="text-xl font-bold" style={{ color: accent }}>
+          Mohammed Dwina
+        </Link>
 
-      <nav className="flex gap-6 text-sm font-medium text-gray-700">
-        <Link
-          to="/about"
-          className={
-            location.pathname === "/about" ? active : "hover:text-[#10b981]"
-          }
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-6">
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `text-gray-700 font-medium hover:text-black transition ${
+                  isActive ? "underline underline-offset-4" : ""
+                }`
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Mobile Menu Icon */}
+        <button
+          className="md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
         >
-          About
-        </Link>
-        <Link
-          to="/contact"
-          className={
-            location.pathname === "/contact" ? active : "hover:text-[#10b981]"
-          }
-        >
-          Contact
-        </Link>
-        <Link
-          to="/education"
-          className={
-            location.pathname === "/education" ? active : "hover:text-[#10b981]"
-          }
-        >
-          Education
-        </Link>
-        <Link
-          to="/experience"
-          className={
-            location.pathname === "/experience"
-              ? active
-              : "hover:text-[#10b981]"
-          }
-        >
-          Experience
-        </Link>
-      </nav>
-    </header>
+          {open ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      {open && (
+        <div className="md:hidden border-t bg-white animate-fadeIn">
+          <div className="flex flex-col py-3 px-6 space-y-3">
+            {links.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `text-lg py-2 ${
+                    isActive ? "text-black font-semibold" : "text-gray-700"
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }

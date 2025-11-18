@@ -13,7 +13,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Contact() {
-  const accentColor = "#10b981";
+  const accentColor = "#06b6d4";
   return (
     <div
       className="flex flex-col min-h-screen font-sans text-gray-900 bg-[#f9f9f9]"
