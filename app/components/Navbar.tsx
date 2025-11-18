@@ -15,9 +15,9 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full border-b bg-white sticky top-0 z-50">
+    <nav className="w-full border-b bg-white sticky top-0 z-50 shadow-sm">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo / Title */}
+        {/* Logo */}
         <Link to="/" className="text-xl font-bold" style={{ color: accent }}>
           Mohammed Dwina
         </Link>
@@ -49,27 +49,29 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
-      {open && (
-        <div className="md:hidden border-t bg-white animate-fadeIn">
-          <div className="flex flex-col py-3 px-6 space-y-3">
-            {links.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `text-lg py-2 ${
-                    isActive ? "text-black font-semibold" : "text-gray-700"
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </div>
+      {/* Mobile Menu (Animated) */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="flex flex-col py-3 px-6 space-y-3 bg-white border-t">
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `text-lg py-2 transition ${
+                  isActive ? "text-black font-semibold" : "text-gray-700"
+                }`
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 }
