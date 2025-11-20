@@ -37,7 +37,7 @@ export default function About() {
           <img
             src="https://avatars.githubusercontent.com/u/26422326?v=4"
             alt="Mohammed Dwina"
-            className="w-50 h-50 rounded-full shadow-lg object-cover"
+            className="logo rounded-full shadow-lg object-cover"
           />
 
           <h1 className="text-4xl font-bold">Mohammed Dwina</h1>
