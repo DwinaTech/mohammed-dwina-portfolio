@@ -19,3 +19,8 @@ body {
 .nav_link:hover svg {
   stroke: #000000 !important;
 }
+
+.logo {
+  width: 330px;
+  height: 230px;
+}
